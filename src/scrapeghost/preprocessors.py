@@ -16,7 +16,7 @@ class CleanHTML:
     def __init__(self, **kwargs: dict) -> None:
         # need to set remove_unknown_tags to False since lxml.html seems to
         # have an outdated list of tags
-        self.cleaner = lxml.html.clean.Cleaner(**kwargs, remove_unknown_tags=False)
+        self.cleaner = lxml.html.clean.Cleaner(**kwargs, remove_unknown_tags=False, kill_tags = ["header"])
 
     def __str__(self) -> str:
         return "CleanHTML"
